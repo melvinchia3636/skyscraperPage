@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWrapper</class>
+ <widget class="QWidget" name="MainWrapper">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>704</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Merdeka PNB 188</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="LeftWrapper" stretch="0">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QScrollArea" name="LeftContainer">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+         <horstretch>100</horstretch>
+         <verstretch>100</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>700</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="LeftContent">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>367</width>
+          <height>1145</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="BuildingName">
+           <property name="font">
+            <font>
+             <family>Avenir</family>
+             <pointsize>24</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Merdeka PNB 118</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="BuildingAddress">
+           <property name="font">
+            <font>
+             <family>Avenir</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Jalan Hang Jebat
+Kuala Lumpur Malaysia</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QFormLayout" name="DetailsContainer">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+           </property>
+           <property name="labelAlignment">
+            <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+           </property>
+           <property name="formAlignment">
+            <set>Qt::AlignJustify|Qt::AlignTop</set>
+           </property>
+           <property name="horizontalSpacing">
+            <number>20</number>
+           </property>
+           <property name="topMargin">
+            <number>24</number>
+           </property>
+           <item row="2" column="0">
+            <widget class="QLabel" name="StatusLabel">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Status:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="StatusContent">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: green</string>
+             </property>
+             <property name="text">
+              <string>Built</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::PlainText</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="ConstructionDatesLabel">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Construction Dates:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="ConstructionDateBeginLabel">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>    Begin:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="ConstructionBeginContent">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>2014</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="ConstructionEndLabel">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>    End:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLabel" name="ConstructionEndsContent">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>2023</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="FloorCountLabel">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Floor Count:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLabel" name="FloorCountContent">
+             <property name="font">
+              <font>
+               <family>Avenir</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>118</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="BuildingUsesLabel">
+             <property name="text">
+              <string>Building Uses:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="BuildingUsesContent">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;- mixed use&lt;/span&gt;&lt;br/&gt;- hotel&lt;br/&gt;- office&lt;br/&gt;- parking garage&lt;br/&gt;- residential&lt;br/&gt;- retail&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="StructuralTypesLabel">
+             <property name="text">
+              <string>Structural Types:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="StructuralTypeContent">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;- highrise&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="SpacerBetweenDetailsAndDescriptions">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="DescriptionsLabel">
+           <property name="font">
+            <font>
+             <family>Avenir</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Descriptions</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="DescriptionsContent">
+           <property name="font">
+            <font>
+             <family>Avenir</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Architects:&lt;br/&gt;• Fender Katsalidis Architects&lt;br/&gt;• RSP Architects Sdn Bhd&lt;br/&gt;&lt;br/&gt;• Structural engineer: Arup&lt;br/&gt;&lt;br/&gt;• &lt;a href=&quot;https://www.skydb.net/building/?id=435192499&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SkyDB Entry&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;• &lt;a href=&quot;http://en.wikipedia.org/wiki/KL118&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Wikipedia Entry&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;• &lt;a href=&quot;https://www.skyscrapercenter.com/kuala-lumpur/menara-warisan-merdeka/10115&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;SkyscraperCenter Entry&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;• &lt;a href=&quot;https://www.google.com/search?q=Merdeka+PNB118+Kuala+Lumpur&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Google Search&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="SpacerBetweenDescriptionsAndAerialView">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="AerialViewTitle">
+           <property name="font">
+            <font>
+             <family>Avenir</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Aerial View</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="AerialViewContent">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="assets/assets.qrc">:/image/staticmap.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="RightContainer" stretch="0,0,0,0,0">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="Diagram">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="assets/assets.qrc">:/image/113373.gif</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="margin">
+        <number>24</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="DiagramAuthor">
+       <property name="font">
+        <font>
+         <family>Avenir</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Drawing by Rorfyin</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="DiagramCopyright">
+       <property name="font">
+        <font>
+         <family>Avenir</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>© SkyscraperPage.com</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="SpacerBetweenDiagramCopyrightAndViewAllDiagramButtion">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ViewAllDiagramButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Avenir</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>View All Drawings (7)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="assets/assets.qrc"/>
+  <include location="assets.qrc"/>
+ </resources>
+ <connections/>
+</ui>

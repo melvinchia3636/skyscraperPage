@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>706</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diagrams View</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="MainWrapper">
+     <item>
+      <widget class="QLabel" name="ResultAmountLabel">
+       <property name="font">
+        <font>
+         <family>Avenir</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Displaying results 1 to 25 of 44,929 structures</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableView" name="DiagramContent"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="NavigationButtonContainer">
+     <item>
+      <widget class="QPushButton" name="PreviousPageButton">
+       <property name="text">
+        <string>&lt; Previous</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="PageNumberLabel">
+       <property name="font">
+        <font>
+         <family>Avenir</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Page 1 of 1,798</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="NextPageButton">
+       <property name="text">
+        <string>Next &gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="SpacerBetweenNavigationButtonsAndJumpToPageButton">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="JumpToPageInput">
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="JumpToPageButton">
+       <property name="text">
+        <string>Jump to Page</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

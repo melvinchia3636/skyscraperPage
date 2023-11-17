@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="assets/assets.qrc">:/image/diagram-removebg-preview(1).png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Avenir</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>A GUI Client for</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Avenir</family>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>SkyscraperPage.com</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Diagrams</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Database</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Quit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>465</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDiagrams">
+    <property name="title">
+     <string>Diagrams</string>
+    </property>
+    <addaction name="actionSkyscraper_Diagrams"/>
+    <addaction name="actionDiagram_Search"/>
+    <addaction name="actionBrowse_by_Cities"/>
+    <addaction name="separator"/>
+    <addaction name="actionDiagram_Statistics"/>
+   </widget>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <widget class="QMenu" name="menuBrowse">
+     <property name="title">
+      <string>Browse</string>
+     </property>
+     <addaction name="actionBy_Metropolitan_Areas_2"/>
+     <addaction name="actionBy_Cities_2"/>
+     <addaction name="actionBy_Countries_2"/>
+     <addaction name="actionBy_Continents"/>
+    </widget>
+    <addaction name="menuBrowse"/>
+    <addaction name="actionSearch"/>
+    <addaction name="actionNewest_Entries"/>
+    <addaction name="separator"/>
+    <addaction name="actionStatistics"/>
+   </widget>
+   <addaction name="menuDiagrams"/>
+   <addaction name="menuDatabase"/>
+  </widget>
+  <action name="actionSkyscraper_Diagrams">
+   <property name="text">
+    <string>Featured</string>
+   </property>
+  </action>
+  <action name="actionBrowse_by_Cities">
+   <property name="text">
+    <string>By Cities</string>
+   </property>
+  </action>
+  <action name="actionDiagram_Search">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionDiagram_Statistics">
+   <property name="text">
+    <string>Statistics</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionMetropolitan_Areas">
+   <property name="text">
+    <string>By Continents</string>
+   </property>
+  </action>
+  <action name="actionBy_Metropolitan_Areas">
+   <property name="text">
+    <string>By Metropolitan Areas</string>
+   </property>
+  </action>
+  <action name="actionNewest_Entries">
+   <property name="text">
+    <string>Newest Entries</string>
+   </property>
+  </action>
+  <action name="actionBy_Countries">
+   <property name="text">
+    <string>By Countries</string>
+   </property>
+  </action>
+  <action name="actionBy_Cities">
+   <property name="text">
+    <string>By Cities</string>
+   </property>
+  </action>
+  <action name="actionBy_Metropolitan_Areas_2">
+   <property name="text">
+    <string>By Metropolitan Areas</string>
+   </property>
+  </action>
+  <action name="actionBy_Cities_2">
+   <property name="text">
+    <string>By Cities</string>
+   </property>
+  </action>
+  <action name="actionBy_Countries_2">
+   <property name="text">
+    <string>By Countries</string>
+   </property>
+  </action>
+  <action name="actionBy_Continents">
+   <property name="text">
+    <string>By Continents</string>
+   </property>
+  </action>
+  <action name="actionStatistics">
+   <property name="text">
+    <string>Statistics</string>
+   </property>
+  </action>
+  <action name="actionInteractive_Maps">
+   <property name="text">
+    <string>Interactive Maps</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="assets/assets.qrc"/>
+ </resources>
+ <connections/>
+</ui>
