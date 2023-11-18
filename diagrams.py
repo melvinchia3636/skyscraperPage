@@ -1,5 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-import sys
+from threading import Thread
+import requests
+import time
 
 
 class Component_Item(QtWidgets.QWidget):
@@ -14,7 +16,7 @@ class Component_Item(QtWidgets.QWidget):
         self.MainContainer = QtWidgets.QVBoxLayout(self)
         self.SubtitleLabel = QtWidgets.QLabel(self)
         self.DiagramLabel = QtWidgets.QLabel(self)
-        self.ViewButton = QtWidgets.QPushButton(self)
+        self.ViewButton = QtWidgets.QPushButton(self, text="View")
 
     def setupComponents(self):
         font = QtGui.QFont()
@@ -43,16 +45,18 @@ class Component_Item(QtWidgets.QWidget):
         self.DiagramLabel.setPixmap(QtGui.QPixmap(path))
         self.DiagramLabel.setScaledContents(True)
 
-    def setButtonText(self, text):
-        self.ViewButton.setText(text)
+    def addSpacer(self):
+        self.MainContainer.addSpacerItem(
+            QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding))
 
 
 class Ui_Diagrams(object):
     def setupUi(self, MainWindow):
+        self.data = []
         self.MainWindow = MainWindow
         QtCore.QDir.addSearchPath('diagrams', 'assets/diagrams/')
 
-        MainWindow.resize(926, 878)
+        MainWindow.resize(960, 500)
 
         self.Title1Label = QtWidgets.QLabel(parent=MainWindow)
         self.Title2Label = QtWidgets.QLabel(parent=MainWindow)
@@ -80,20 +84,72 @@ class Ui_Diagrams(object):
         self.MainContainer.addWidget(self.Title1Label)
         self.MainContainer.addWidget(self.Title2Label)
 
-        for i in range(3):
-            for j in range(3):
-                item = Component_Item(self.ContentContainer)
-                item.setSubtitle("City, Country")
-                item.setDiagram(
-                    "diagrams:world_skyscraper_construction_2330944475.png")
-                item.setButtonText("View Diagram")
-                self.ContentContainerLayout.addWidget(item, i, j, 1, 1)
-
         self.ContentWrapper.setWidget(self.ContentContainer)
         self.MainContainer.addWidget(self.ContentWrapper)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def updateContent(self):
+        for i in reversed(range(self.ContentContainerLayout.count())):
+            self.ContentContainerLayout.itemAt(i).widget().setParent(None)
+
+        for i, item in enumerate(self.data[0:3]):
+            component = Component_Item()
+            component.setSubtitle(item[1])
+            component.setDiagram(item[2])
+            component.ViewButton.clicked.connect(
+                lambda _, i=i: self.openDiagram(i))
+
+            self.ContentContainerLayout.addWidget(component, 0, i, 1, 1)
+
+        for i, item in enumerate(self.data[3:6]):
+            component = Component_Item()
+            component.setSubtitle(item[1])
+            component.setDiagram(item[2])
+            component.ViewButton.clicked.connect(
+                lambda _, i=i: self.openDiagram(i+3))
+
+            self.ContentContainerLayout.addWidget(
+                component, 1, i, 1 if i < 2 else 2, 1)
+
+            if i == 2:
+                component.addSpacer()
+
+        for i, item in enumerate(self.data[6:8]):
+            component = Component_Item()
+            component.setSubtitle(item[1])
+            component.setDiagram(item[2])
+            component.ViewButton.clicked.connect(
+                lambda _, i=i: self.openDiagram(i+6))
+
+            self.ContentContainerLayout.addWidget(
+                component, 2, i, 1, 1)
+
+        for i, item in enumerate(self.data[8:]):
+            component = Component_Item()
+            component.setSubtitle(item[1])
+            component.setDiagram(item[2])
+            component.ViewButton.clicked.connect(
+                lambda _, i=i: self.openDiagram(i+8))
+
+            self.ContentContainerLayout.addWidget(
+                component, int(3 + (i) / 3), (i - 1) % 3, 1, 1)
+
+        thread = Thread(
+            target=lambda: self.__lazy_load_pixmaps())
+        thread.start()
+
+    def __lazy_load_pixmaps(self) -> None:
+        for i, item in enumerate(self.data):
+            response = requests.get("https://skyscraperpage.com/" + item[2])
+
+            pixmap = QtGui.QPixmap()
+            pixmap.loadFromData(response.content)
+            self.ContentContainerLayout.itemAt(
+                i).widget().DiagramLabel.setPixmap(pixmap)
+            # This make the loading pixmaps feel more smoothly
+            time.sleep(0.02)
 
     def retranslateUi(self, Form):
         Form.setWindowTitle("Skyscraper Diagrams")

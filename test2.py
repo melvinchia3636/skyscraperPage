@@ -1,4 +1,4 @@
-from threading import Thread
+
 from urllib.request import urlopen
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
@@ -12,8 +12,8 @@ import time
 class TestWindow(QMainWindow):
 
     bigger_list = [
-        ["https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/121px-Java_programming_language_logo.svg.png"],
-        ["https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/121px-Java_programming_language_logo.svg.png"]
+        ["https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"],
+        ["https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"]
     ]
 
     def __init__(self):
@@ -61,7 +61,7 @@ class TestWindow(QMainWindow):
                 # Keep in mind that we should create widgets in main thread. Otherwise, some errors might occur
                 image_label = QLabel()
                 image_label.setPixmap(default_pixmap)
-                grid.addWidget(image_label, int(i / 5), i % 5)
+                grid.addWidget(image_label, int((i) / 3), (i - 1) % 3)
 
                 widget_and_url_list.append((image_label, url))
             self.output_layout.addLayout(grid)
@@ -69,7 +69,7 @@ class TestWindow(QMainWindow):
 
         # This is how you can call a thread in python. There is a class name QThread but it is quite overkill in this case.
         # You just have to pass the function into lambda
-        thread = Thread(
+        thread = (
             target=lambda: self.__lazy_load_pixmaps(widget_and_url_list))
         thread.start()
 

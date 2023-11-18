@@ -30,8 +30,8 @@ class Ui_MainWindow(object):
         self.MainWindow = MainWindow
         QtCore.QDir.addSearchPath('welcome', 'assets/welcome/')
 
-        self.setupMainWindow()
         self.initializeComponents()
+        self.setupMainWindow()
         self.setupComponents()
         self.placeComponents()
         self.setupMenuBar()
@@ -227,8 +227,8 @@ class Ui_MainWindow(object):
                 if i['href'].startswith('?') and i.select_one("img")
             ]
 
-            for _, image, _ in data:
-                ...
+            self.MainWindow.DiagramsWindow.UiDiagrams.data = data
+            self.MainWindow.DiagramsWindow.UiDiagrams.updateContent()
 
             if self.MainWindow.DiagramsWindow.isHidden():
                 self.MainWindow.hide()
