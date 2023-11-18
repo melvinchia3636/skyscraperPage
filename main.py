@@ -1,5 +1,4 @@
-import typing
-from PyQt6 import QtCore, QtGui, QtWidgets, QtNetwork
+from PyQt6 import QtWidgets
 from mainWindow import Ui_MainWindow
 from diagrams import Ui_Diagrams
 import sys

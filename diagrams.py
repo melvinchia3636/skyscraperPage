@@ -1,7 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from threading import Thread
 import requests
-import time
+from urllib.request import urlopen
 
 
 class Component_Item(QtWidgets.QWidget):
@@ -94,10 +94,12 @@ class Ui_Diagrams(object):
         for i in reversed(range(self.ContentContainerLayout.count())):
             self.ContentContainerLayout.itemAt(i).widget().setParent(None)
 
+        default_pixmap = self.__create_default_pixmap()
+
         for i, item in enumerate(self.data[0:3]):
             component = Component_Item()
             component.setSubtitle(item[1])
-            component.setDiagram(item[2])
+            component.setDiagram(default_pixmap)
             component.ViewButton.clicked.connect(
                 lambda _, i=i: self.openDiagram(i))
 
@@ -106,7 +108,7 @@ class Ui_Diagrams(object):
         for i, item in enumerate(self.data[3:6]):
             component = Component_Item()
             component.setSubtitle(item[1])
-            component.setDiagram(item[2])
+            component.setDiagram(default_pixmap)
             component.ViewButton.clicked.connect(
                 lambda _, i=i: self.openDiagram(i+3))
 
@@ -119,7 +121,7 @@ class Ui_Diagrams(object):
         for i, item in enumerate(self.data[6:8]):
             component = Component_Item()
             component.setSubtitle(item[1])
-            component.setDiagram(item[2])
+            component.setDiagram(default_pixmap)
             component.ViewButton.clicked.connect(
                 lambda _, i=i: self.openDiagram(i+6))
 
@@ -129,7 +131,7 @@ class Ui_Diagrams(object):
         for i, item in enumerate(self.data[8:]):
             component = Component_Item()
             component.setSubtitle(item[1])
-            component.setDiagram(item[2])
+            component.setDiagram(default_pixmap)
             component.ViewButton.clicked.connect(
                 lambda _, i=i: self.openDiagram(i+8))
 
@@ -140,6 +142,13 @@ class Ui_Diagrams(object):
             target=lambda: self.__lazy_load_pixmaps())
         thread.start()
 
+    def __create_default_pixmap(self):
+        url = 'https://placehold.co/100x60/png?text=Image+Loading...'
+        data = urlopen(url).read()
+        default_pixmap = QtGui.QPixmap()
+        default_pixmap.loadFromData(data)
+        return default_pixmap.scaledToHeight(100)
+
     def __lazy_load_pixmaps(self) -> None:
         for i, item in enumerate(self.data):
             response = requests.get("https://skyscraperpage.com/" + item[2])
@@ -148,8 +157,6 @@ class Ui_Diagrams(object):
             pixmap.loadFromData(response.content)
             self.ContentContainerLayout.itemAt(
                 i).widget().DiagramLabel.setPixmap(pixmap)
-            # This make the loading pixmaps feel more smoothly
-            time.sleep(0.02)
 
     def retranslateUi(self, Form):
         Form.setWindowTitle("Skyscraper Diagrams")
